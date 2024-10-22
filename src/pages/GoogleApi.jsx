@@ -66,8 +66,17 @@ const GoogleApi = () => {
     <div className="p-b-8">
       <BookStoreNav input={input} setInput={setInput} />{" "}
       {/* Render navigation bar with input state */}
-      <div className="mt-40">
+      <div className="mt-40 ">
         {" "}
+        {/* <div className="ml-2 wrap p-4 ">
+          <h1 className="text-xl font-bold mt-10">
+            Welcome to Ibrahim's Bookstore! This website allows you to search
+            for a variety of books of your choice. Designed to be user-friendly,
+            it provides a simple way for book lovers to explore and discover
+            their favorite reads with ease. Enjoy browsing through our
+            collection and happy reading!
+          </h1>
+        </div> */}
         {/* Adjusted the margin to accommodate navbar */}
         {loading ? ( // Show the spinner if loading is true
           <LoadingSpinner />

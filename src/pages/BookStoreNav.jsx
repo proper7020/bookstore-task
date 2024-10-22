@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const BookStoreNav = ({ input, setInput }) => {
+
+
+const BookStoreNav = ({  setInput }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState("");
 
@@ -22,19 +24,28 @@ const BookStoreNav = ({ input, setInput }) => {
         <Link to="/" className="text-5xl font-bold">
           IBRAHIM's Bookstore
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 text-black">
           {/* Desktop search input, hidden on smaller screens */}
-          <input
+          {/* <input
             className="hidden md:block py-2 px-4 rounded-lg focus:outline-none bg-white text-black"
             type="text"
             placeholder="Search for books..."
-            // value={input}
+            // value={searchOpen}
             onChange={(e) => setSearchOpen(e.target.value)}
             onKeyUp={(e) => e.key === "Enter" && searchBook()}
-          />
+          /> */}
           {/* Hamburger menu button for mobile view */}
+          <input
+            className="  py-2 px-4 focus:outline-none bg-white rounded-lg ml-6"
+            type="text"
+            placeholder="Search for books..."
+            value={searchOpen}
+            onChange={(e) => setSearchOpen(e.target.value)} // Update searchOpen state
+            onKeyUp={(e) => e.key === "Enter" && searchBook()} // Trigger search on Enter
+          />
+
           <button
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-black focus:outline-none"
             onClick={toggleMenu}
           >
             <svg
@@ -60,15 +71,16 @@ const BookStoreNav = ({ input, setInput }) => {
           isOpen ? "block" : "hidden"
         } md:hidden mt-2 border-t border-gray-600 pt-2`}
       >
-        <input
+        {/* <input
           className="py-2 px-4 focus:outline-none bg-transparent"
           type="text"
           placeholder="Search for books..."
           value={input}
           onChange={searchBook}
-        />
+        /> */}
       </div>
     </nav>
+    
   );
 };
 
